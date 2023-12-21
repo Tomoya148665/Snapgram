@@ -29,10 +29,10 @@ const SignupForm = () => {
   const { checkAuthUser, isLoading: isUserLoading } = useUserContext();
   const navigate = useNavigate();
 
-  const { mutateAsync: createUserAccount, isPending: isCreatingAccount } =
+  const { mutateAsync: createUserAccount, isLoading: isCreatingAccount } =
     useCreateUserAccountMutation();
 
-  const { mutateAsync: siginInAccount, isPending: isSigningIn } =
+  const { mutateAsync: signInAccount, isLoading: isSigningInUser } =
     useSignInAccount();
 
   // 1. Define your form.
@@ -52,7 +52,7 @@ const SignupForm = () => {
 
     if (!newUser) {
       return toast({
-        title: "Sign up failed. Please try again.",
+        title: "Sign upa failed. Please try again.",
       });
     }
 
@@ -72,7 +72,7 @@ const SignupForm = () => {
 
       navigate("/");
     } else {
-      return toast({ title: "Sign in failed. Please try again." });
+      return toast({ title: "Sign upb failed. Please try again." });
     }
   }
 
